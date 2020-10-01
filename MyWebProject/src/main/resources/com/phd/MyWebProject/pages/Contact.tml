@@ -1,0 +1,12 @@
+<html t:type="layout" title="Contact com.phd"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+
+    <body>
+    <p>Contact com.phd ...</p>
+	
+	<p id="myId" data-mydata="testvalue"/> 
+
+	</body>
+    
+   </html>

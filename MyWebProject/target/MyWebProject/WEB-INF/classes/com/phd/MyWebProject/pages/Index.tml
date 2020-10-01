@@ -1,0 +1,26 @@
+<html t:type="layout" title="MyWebProject Index"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+        >
+
+    <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <p>
+            <img src="${asset:context:images/tapestry.png}"
+                 alt="${message:greeting}" title="${message:greeting}"/>
+        </p>
+        <h3>${message:greeting}</h3>
+    </div>
+    
+    <body>  
+    <t:form>
+        <t:errors/>
+        <label><h3>Please load your owl ontology:</h3></label> 
+        <input t:type="upload" t:id="file" t:value="file" validate="required"/>
+        <br/>
+        <input type="submit" value="Upload"/>
+    </t:form>
+   	</body>
+
+</html>

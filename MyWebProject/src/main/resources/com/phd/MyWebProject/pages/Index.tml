@@ -1,0 +1,65 @@
+<html t:type="layout" title="MyWebProject Index"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+        xmlns:p = "tapestry:parameter">
+
+    <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <p>
+            <img src="${asset:context:images/tapestry.png}"
+                 alt="${message:greeting}" title="${message:greeting}"/>
+        </p>
+        <h3>${message:greeting}</h3>
+    </div>
+    <style>
+    .grid3 {
+ 	display: grid;
+  	padding: 10px;
+  	width:25%;
+  	height: 200px;
+  	overflow-y:scroll;
+ 	}
+ 	 	
+ 	.grid2{
+    	width: 25%;
+        height: 100%;
+        border-style: solid;
+        display: inline;
+        box-sizing: border-box;
+ 	}
+    </style>
+    
+    <body>  
+    <div>
+    <form t:type="form">
+        <t:errors/>
+        <label><h3>Please load your owl ontology:</h3></label> 
+        <input t:type="upload" t:id="file" t:value="file" validate="required"/>
+        <br/>
+        <input class="btsubmit" t:type="submit" t:id="upload" value="Uplaod Ontology"/>
+        <input class="btsubmit" t:type="submit" t:id="visualize" value="Visualize Ontology"/>
+    </form>  
+    </div>
+         <div class="Ontologychosen-info">
+                ${message}
+         </div>
+         <div class="grid3" scroll="true">
+          	<t:grid t:source="classandlabels" row="ClassAndLabel" 
+          	  exclude="classandlabel.ontologyClass" pagerPosition="top">
+          	
+         		<p:labelCell>
+         			<t:eventlink t:event="label"  t:context="classandlabel.label">${classandlabel.label}</t:eventlink>
+                </p:labelCell> 
+            </t:grid> 
+    	</div>
+    	
+    	<div class="grid2">
+    	<div>${message2}</div>
+        <t:grid t:source="matchedclassandlabels" exclude="classandlabel.ontologyClass" pagerPosition="top">
+         
+        </t:grid> 
+           </div>
+   	</body>
+
+</html>
